@@ -1,4 +1,8 @@
-/* Yleiset asetukset */
+* {
+    margin: 0;
+    padding: 0;
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -11,44 +15,6 @@ body {
     min-height: 100vh;
 }
 
-a {
-    text-decoration: none;
-    color: #EF0000; /* Beckhoffin punainen */
-}
-
-a:hover {
-    text-decoration: underline;
-}
-
-/* Header-tyylit */
-header {
-    background-color: #fff;
-    padding: 15px 20px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-}
-
-header nav {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-}
-
-header nav a {
-    margin-left: 20px;
-    font-size: 1.1em;
-    font-weight: bold;
-    color: #333;
-}
-
-header nav a:first-child {
-    margin-left: 0;
-}
-
-header nav a:hover {
-    color: #EF0000;
-}
-
-/* Main-alue */
 main {
     padding: 30px 20px;
     flex-grow: 1;
@@ -63,176 +29,21 @@ main {
     border-radius: 12px;
 }
 
-/* Otsikot */
 h1, h2, h3, h4, h5, h6 {
     color: #1a1a1a;
     font-weight: bold;
     margin-bottom: 20px;
 }
 
-/* Lomakkeet */
-form {
-    margin-bottom: 0px;
+a {
+    text-decoration: none;
+    color: #EF0000;
 }
 
-form h2 {
-    text-align: center;
-    margin-bottom: 20px;
-    font-size: 1.8em;
+a:hover {
+    text-decoration: underline;
 }
 
-label {
-    display: flex;
-    margin-bottom: 5px;
-    font-weight: bold;
-    color: #333;
-}
-
-/* Kenttien ulkoasu */
-input[type="text"],
-input[type="password"],
-input[type="email"],
-input[type="number"],
-select {
-    width: 900px;
-    padding: 12px 0;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    background-color: #f9f9f9;
-    margin-bottom: 15px;
-}
-
-input[type="checkbox"] {
-    margin-right: 10px;
-    transform: scale(1.2);
-}
-
-input:focus,
-textarea:focus,
-select:focus {
-    outline: none;
-    border-color: #EF0000;
-    background-color: white;
-}
-
-/* Painikkeet */
-button, .btn {
-    width: 100%;
-    padding: 12px;
-    font-size: 16px;
-    font-weight: bold;
-    background-color: #EF0000;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-}
-
-button:hover, .btn:hover {
-    background-color: #ffa500;
-}
-
-/* Veikkauslomake ja tulos */
-/* Veikkauslomakkeen ulkoasu */
-.bet-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.bet-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-}
-
-.bet-input-group {
-    display: flex;
-    gap: 10px;
-    align-items: center;
-}
-
-.bet-display {
-    display: flex;
-    gap: 10px;
-    align-items: center;
-    font-size: 16px;
-    font-weight: bold;
-}
-
-.bet-display .score,
-.bet-form input[type="number"] {
-    width: 50px;
-    padding: 6px 12px;
-    background-color: #f1f1f1;
-    border-radius: 4px;
-    text-align: center;
-    border: 1px solid #ccc;
-}
-
-.bet-form input[type="number"] {
-    background-color: #ffffff;
-}
-
-.bet-form input[type="number"]:focus {
-    background-color: white;
-    border-color: #EF0000;
-}
-
-.bet-form span, input[type="number"] {
-    font-weight: bold;
-    font-size: 16px;
-}
-
-.bet-form button {
-    margin-top: 0px;
-    padding: 8px 12px;
-    font-size: 14px;
-    font-weight: bold;
-    border-radius: 4px;
-    background-color: #EF0000;
-    color: white;
-    border: none;
-    cursor: pointer;
-}
-
-.bet-form button:hover {
-    background-color: #ffa500;
-}
-
-.bet-form span {
-    font-weight: bold;
-    font-size: 16px;
-}
-
-/* Suodatuslomake */
-form label {
-    font-weight: 500;
-}
-
-form select, form input[type="text"] {
-    width: 60%;
-    margin-bottom: 15px;
-}
-
-form input[type="checkbox"] + label {
-    display: inline-block;
-    margin-left: 5px;
-    font-size: 1em;
-}
-
-/* Suodatuspainike */
-form button {
-    width: auto;
-    padding: 10px 20px;
-    font-size: 1em;
-    margin-top: 10px;
-    border-radius: 6px;
-}
-
-/* Viestit */
 p {
     text-align: center;
     margin-top: 15px;
@@ -250,7 +61,6 @@ p.success-message {
     text-align: center;
 }
 
-/* Taulukot */
 table {
     width: 100%;
     border-collapse: collapse;
@@ -278,64 +88,6 @@ tr:hover {
     background-color: #ffe6cc;
 }
 
-/* Taulukon input-kentät */
-table td form input[type="number"] {
-    width: 70px;
-    padding: 6px;
-    font-size: 14px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    background-color: #fff;
-    text-align: center;
-}
-
-table td form button {
-    width: 100%;
-    padding: 8px 10px;
-    font-size: 14px;
-    font-weight: bold;
-    background-color: #EF0000;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-table td form button:hover {
-    background-color: #ffa500;
-}
-
-/* Input-kentän hover ja focus */
-table td form input[type="number"]:hover,
-table td form input[type="number"]:focus {
-    border-color: #EF0000;
-    background-color: #f9f9f9;
-}
-
-/* Navigointilinkit */
-nav a, nav form button {
-    font-size: 1.1em;
-    font-weight: bold;
-    margin-left: 20px;
-    color: #333;
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 0;
-    text-decoration: none;
-}
-
-nav a:hover, nav form button:hover {
-    color: #EF0000;
-}
-
-nav form {
-    display: inline;
-    margin: 0;
-    padding: 0;
-}
-
-/* Footer */
 footer {
     background-color: #fff;
     text-align: center;
@@ -358,7 +110,6 @@ footer a:hover {
     text-decoration: underline;
 }
 
-/* Info-laatikko */
 .info-box {
     background-color: #f9f9f9;
     padding: 20px;
@@ -392,36 +143,4 @@ footer a:hover {
 .highlight-row {
     color: #d32f2f;
     font-weight: bold;
-}
-
-/* Responsiivisuus */
-@media (max-width: 768px) {
-    header nav {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    header nav a {
-        margin: 10px 0;
-    }
-
-    .container {
-        padding: 20px;
-    }
-
-    form select, form input[type="text"] {
-        width: 100%;
-    }
-
-    form button {
-        width: 100%;
-    }
-
-    table td form input[type="number"] {
-        width: 50px;
-    }
-
-    table td form button {
-        font-size: 12px;
-    }
 }

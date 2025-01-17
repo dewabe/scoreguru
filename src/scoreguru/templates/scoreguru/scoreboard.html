@@ -1,32 +1,33 @@
 {% extends "base.html" %}
+{% load i18n %}
 
 {% block content %}
-    <h2>Scoreboard</h2>
+    <h2>{% trans "Scoreboard" %}</h2>
 
     <!-- Info-alue lyhenteiden selityksille ja pisteenlaskulle -->
     <div class="info-box">
-        <h4>Explanation of Abbreviations:</h4>
+        <h4>{% trans "Explanation of Abbreviations:" %}</h4>
         <ul>
-            <li><strong>B</strong>: Bets - Number of predictions made by the player.</li>
-            <li><strong>H</strong>: Home Goals - Correctly predicted home team goals.</li>
-            <li><strong>V</strong>: Visitor Goals - Correctly predicted visitor team goals.</li>
-            <li><strong>W</strong>: Winner - Correctly predicted the winner (or tie).</li>
-            <li><strong>D</strong>: Draw - Correctly predicted that the game ended in a tie.</li>
+            <li><strong>{% trans "B" %}</strong>: {% trans "Bets - Number of predictions made by the player." %}</li>
+            <li><strong>{% trans "H" %}</strong>: {% trans "Home Goals - Correctly predicted home team goals." %}</li>
+            <li><strong>{% trans "V" %}</strong>: {% trans "Visitor Goals - Correctly predicted visitor team goals." %}</li>
+            <li><strong>{% trans "W" %}</strong>: {% trans "Winner - Correctly predicted the winner (or tie)." %}</li>
+            <li><strong>{% trans "D" %}</strong>: {% trans "Draw - Correctly predicted that the game ended in a tie." %}</li>
         </ul>
     </div>
 
     <!-- Suodatuslomake kauden valintaan -->
     <form method="GET" action="{% url 'scoreboard' %}" style="display: none;">
-        <label for="season">Select Season:</label>
+        <label for="season">{% trans "Select Season:" %}</label>
         <select name="season" id="season">
-            <option value="">All Seasons</option>
+            <option value="">{% trans "All Seasons" %}</option>
             {% for season in seasons %}
                 <option value="{{ season.name }}" {% if selected_season == season.name %}selected{% endif %}>
                     {{ season.name }}
                 </option>
             {% endfor %}
         </select>
-        <button type="submit">Filter</button>
+        <button type="submit">{% trans "Filter" %}</button>
     </form>
 
     <!-- Scoreboard-taulukko -->
@@ -34,13 +35,13 @@
         <thead>
             <tr>
                 <th>#</th>
-                <th>Player</th>
-                <th>B</th>
-                <th>H</th>
-                <th>V</th>
-                <th>W</th>
-                <th>D</th>
-                <th>Total</th>
+                <th>{% trans "Player" %}</th>
+                <th>{% trans "B" %}</th>
+                <th>{% trans "H" %}</th>
+                <th>{% trans "V" %}</th>
+                <th>{% trans "W" %}</th>
+                <th>{% trans "D" %}</th>
+                <th>{% trans "Total" %}</th>
             </tr>            
         </thead>
         <tbody>
@@ -57,7 +58,7 @@
                 </tr>
             {% empty %}
                 <tr>
-                    <td colspan="7">No scoreboard entries found.</td>
+                    <td colspan="7">{% trans "No scoreboard entries found." %}</td>
                 </tr>
             {% endfor %}
         </tbody>
@@ -68,17 +69,17 @@
     <div class="pagination">
         <span class="step-links">
             {% if scoreboard.has_previous %}
-                <a href="?{% if selected_season %}season={{ selected_season }}&{% endif %}page=1">First</a>
-                <a href="?{% if selected_season %}season={{ selected_season }}&{% endif %}page={{ scoreboard.previous_page_number }}">Previous</a>
+                <a href="?{% if selected_season %}season={{ selected_season }}&{% endif %}page=1">{% trans "First" %}</a>
+                <a href="?{% if selected_season %}season={{ selected_season }}&{% endif %}page={{ scoreboard.previous_page_number }}">{% trans "Previous" %}</a>
             {% endif %}
 
             <span class="current">
-                Page {{ scoreboard.number }} of {{ scoreboard.paginator.num_pages }}
+                {% blocktrans %}Page {{ scoreboard.number }} of {{ scoreboard.paginator.num_pages }}{% endblocktrans %}
             </span>
 
             {% if scoreboard.has_next %}
-                <a href="?{% if selected_season %}season={{ selected_season }}&{% endif %}page={{ scoreboard.next_page_number }}">Next</a>
-                <a href="?{% if selected_season %}season={{ selected_season }}&{% endif %}page={{ scoreboard.paginator.num_pages }}">Last</a>
+                <a href="?{% if selected_season %}season={{ selected_season }}&{% endif %}page={{ scoreboard.next_page_number }}">{% trans "Next" %}</a>
+                <a href="?{% if selected_season %}season={{ selected_season }}&{% endif %}page={{ scoreboard.paginator.num_pages }}">{% trans "Last" %}</a>
             {% endif %}
         </span>
     </div>

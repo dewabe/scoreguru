@@ -11,11 +11,16 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
 from pathlib import Path
+import environ
+from django.utils.translation import gettext_lazy as _
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
 VENV_DIR = BASE_DIR.parent / 'venv'
 
+env = environ.Env()
+environ.Env.read_env(VENV_DIR / '.env')
 
 # Application definition
 
@@ -39,6 +44,7 @@ INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -66,6 +72,9 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'config.wsgi.application'
 
+DATABASES = {
+    'default': env.db('DATABASE_URL', default=f'sqlite:///{VENV_DIR}/db.sqlite3'),
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
@@ -91,13 +100,17 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'fi'
 LANGUAGES = [
-    ('en', 'English'),
-    ('fi', 'Finnish'),
+    ('en', _('English')),
+    ('fi', _('Finnish')),
 ]
-
+LOCALE_PATHS = [
+    BASE_DIR / 'locale',
+]
+LANGUAGE_COOKIE_NAME = 'scoreguru-app'
 TIME_ZONE = 'Europe/Helsinki'
 
 USE_I18N = True
+USE_L10N = True
 
 USE_TZ = True
 

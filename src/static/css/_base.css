@@ -1,0 +1,31 @@
+/* Responsiivisuus */
+@media (max-width: 768px) {
+    header nav {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    header nav a {
+        margin: 10px 0;
+    }
+
+    .container {
+        padding: 20px;
+    }
+
+    form select, form input[type="text"] {
+        width: 100%;
+    }
+
+    form button {
+        width: 100%;
+    }
+
+    table td form input[type="number"] {
+        width: 50px;
+    }
+
+    table td form button {
+        font-size: 12px;
+    }
+}

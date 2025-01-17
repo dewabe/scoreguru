@@ -17,12 +17,6 @@ ScoreGuru-sovellus käyttää seuraavaa pisteytysjärjestelmää ennustusten arv
 
 Tarkka tasapelitulos tuo lisäpisteen, mutta ylimääräistä bonuspistettä ei jaeta. Näin ollen maksimi pistemäärä on 4.
 
+Olen valmistellut Jääkiekon vuoden 2025 MM-kisojen joukkueiden ja pelien tiedot JSON-tiedostoihin. Saat ne käyttöön sovellukseesi komennoilla:
 python manage.py loaddata fixtures/world_championship_2025.json
 python manage.py loaddata fixtures/ww2025_games.json
-
-
-Tiimi - TiimiKausi - Kausi - Liiga
-
-Veikkaus - Peli (tiimi, tiimi, kausi)
-
-Pistetaulukko - Veikkaus

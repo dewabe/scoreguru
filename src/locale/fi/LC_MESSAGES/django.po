@@ -1,0 +1,385 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-17 16:12+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "English"
+msgstr "Englanniksi"
+
+msgid "Finnish"
+msgstr "Suomeksi"
+
+msgid "Details of the game"
+msgstr "Ottelun tiedot"
+
+msgid "Results"
+msgstr "Tulokset"
+
+msgid "Final scores of the game (if available)"
+msgstr "Ottelun lopputulos (jos saatavilla)"
+
+msgid "Home Team"
+msgstr "Kotijoukkue"
+
+msgid "Visitor Team"
+msgstr "Vierasjoukkue"
+
+msgid "Basic information about the league"
+msgstr "Liigan perustiedot"
+
+msgid "Prediction details"
+msgstr "Veikkauksen tiedot"
+
+msgid "User and season details"
+msgstr "Käyttäjän ja kauden tiedot"
+
+msgid "Correct Predictions"
+msgstr "Oikeat veikkaukset"
+
+msgid "Details of correct predictions in the season"
+msgstr "Oikeiden veikkausten tiedot kaudella"
+
+msgid "Total Points"
+msgstr "Pisteet yhteensä"
+
+msgid "Total points earned during the season"
+msgstr "Kauden aikana ansaitut pisteet"
+
+msgid "Details of the season"
+msgstr "Kauden tiedot"
+
+msgid "Team information"
+msgstr "Joukkueen tiedot"
+
+msgid "The season this game belongs to."
+msgstr "Kausi, johon ottelu kuuluu."
+
+msgid "The home team participating in the game."
+msgstr "Kotijoukkue, joka osallistuu otteluun."
+
+msgid "The visitor team participating in the game."
+msgstr "Vierasjoukkue, joka osallistuu otteluun."
+
+msgid "Goals scored by the home team (leave blank if the game has not been played yet)."
+msgstr "Kotijoukkueen tekemät maalit (jätä tyhjäksi, jos ottelua ei ole vielä pelattu)."
+
+msgid "Goals scored by the visitor team (leave blank if the game has not been played yet)."
+msgstr "Vierasjoukkueen tekemät maalit (jätä tyhjäksi, jos ottelua ei ole vielä pelattu)."
+
+msgid "The date and time when the game is scheduled to start."
+msgstr "Päivämäärä ja aika, jolloin ottelu on määrä alkaa."
+
+msgid "Game"
+msgstr "Ottelu"
+
+msgid "Games"
+msgstr "Ottelut"
+
+msgid "League name, for example 'World Championship' or 'NHL'."
+msgstr "Liigan nimi, esimerkiksi 'Maailmanmestaruus' tai 'NHL'."
+
+msgid "Type of sport, e.g., 'Hockey', 'Soccer'."
+msgstr "Urheilulaji, esimerkiksi 'Jääkiekko', 'Jalkapallo'."
+
+msgid "Optional description of the league."
+msgstr "Valinnainen kuvaus liigasta."
+
+msgid "League"
+msgstr "Liiga"
+
+msgid "Leagues"
+msgstr "Liigat"
+
+msgid "The user who made the prediction."
+msgstr "Käyttäjä, joka teki veikkauksen."
+
+msgid "The game being predicted."
+msgstr "Ottelu, jota veikkaus koskee."
+
+msgid "Predicted goals for the home team."
+msgstr "Ennustetut maalit kotijoukkueelle."
+
+msgid "Predicted goals for the visitor team."
+msgstr "Ennustetut maalit vierasjoukkueelle."
+
+msgid "Correct predictions for home team goals."
+msgstr "Oikeat veikkaukset kotijoukkueen maaleista."
+
+msgid "Correct predictions for visitor team goals."
+msgstr "Oikeat veikkaukset vierasjoukkueen maaleista."
+
+msgid "Correct predictions for the winner."
+msgstr "Oikeat veikkaukset voittajasta."
+
+msgid "Correct predictions for ties."
+msgstr "Oikeat veikkaukset tasapeleistä."
+
+msgid "The total points earned by the user in this season."
+msgstr "Käyttäjän ansaitsemat pisteet tällä kaudella."
+
+msgid "Prediction"
+msgstr "Veikkaus"
+
+msgid "Predictions"
+msgstr "Veikkaukset"
+
+msgid "The user whose score is being tracked."
+msgstr "Käyttäjä, jonka pisteitä seurataan."
+
+msgid "The season for which the scoreboard entry is valid."
+msgstr "Kausi, jolle tulostaulumerkintä on voimassa."
+
+msgid "Scoreboard"
+msgstr "Tulostaulu"
+
+msgid "Scoreboards"
+msgstr "Tulostaulut"
+
+msgid "The league to which this season belongs."
+msgstr "Liiga, johon tämä kausi kuuluu."
+
+msgid "Season name, for example '2025 World Championship'."
+msgstr "Kauden nimi, esimerkiksi '2025 Maailmanmestaruus'."
+
+msgid "Start date of the season."
+msgstr "Kauden aloituspäivämäärä."
+
+msgid "End date of the season."
+msgstr "Kauden päättymispäivämäärä."
+
+msgid "Indicates whether the season is visible in the UI."
+msgstr "Ilmaisee, onko kausi näkyvissä käyttöliittymässä."
+
+msgid "Season"
+msgstr "Kausi"
+
+msgid "Seasons"
+msgstr "Kaudet"
+
+msgid "The team participating in the season."
+msgstr "Joukkue, joka osallistuu kauteen."
+
+msgid "The season in which the team is participating."
+msgstr "Kausi, johon joukkue osallistuu."
+
+msgid "Team in Season"
+msgstr "Joukkue kaudella"
+
+msgid "Teams in Season"
+msgstr "Joukkueet kaudella"
+
+msgid "Team name, for example 'Finland' or 'Canada'."
+msgstr "Joukkueen nimi, esimerkiksi 'Suomi' tai 'Kanada'."
+
+msgid "Three-letter abbreviation for the team, for example 'FIN' or 'CAN'."
+msgstr "Joukkueen kolmen kirjaimen lyhenne, esimerkiksi 'FIN' tai 'CAN'."
+
+msgid "Team logo image."
+msgstr "Joukkueen logokuva."
+
+msgid "Two-letter ISO Alpha-2 country code, for example 'FI' for Finland. Leave blank for non-national teams."
+msgstr "Kahden kirjaimen ISO Alpha-2 -maakoodi, esimerkiksi 'FI' Suomelle. Jätä tyhjäksi, jos ei ole kansallinen joukkue."
+
+msgid "Team"
+msgstr "Joukkue"
+
+msgid "Teams"
+msgstr "Joukkueet"
+
+msgid "Rules"
+msgstr "Säännöt"
+
+msgid "Here, you only predict the result of regular game time. Games decided in overtime do not award additional points."
+msgstr "Tässä veikataan vain varsinaisen peliajan tulosta. Jatkoajalla ratkaistut pelit eivät anna lisäpisteitä."
+
+msgid "How to earn points:"
+msgstr "Miten ansaita pisteitä:"
+
+msgid "+1 point for correctly predicting the home team goals."
+msgstr "+1 piste kotijoukkueen maaleista oikein veikatessa."
+
+msgid "+1 point for correctly predicting the visitor team goals."
+msgstr "+1 piste vierasjoukkueen maaleista oikein veikatessa."
+
+msgid "+1 point for predicting the correct match result (win or draw)."
+msgstr "+1 piste ottelun tuloksen (voitto tai tasapeli) oikein veikkaamisesta."
+
+msgid "+1 point for predicting the exact score in case of a draw."
+msgstr "+1 piste täsmällisestä tasapelituloksen veikkauksesta."
+
+msgid "Note:"
+msgstr "Huomautus:"
+
+msgid "The maximum score per prediction is"
+msgstr "Maksimipistemäärä per veikkaus on"
+
+msgid "points"
+msgstr "pistettä"
+
+msgid "Upcoming Games"
+msgstr "Tulevat ottelut"
+
+msgid "Filter by Team:"
+msgstr "Suodata joukkueen mukaan:"
+
+msgid "All Teams"
+msgstr "Kaikki joukkueet"
+
+msgid "Show only unpredicted games"
+msgstr "Näytä vain veikkaamattomat ottelut"
+
+msgid "Show past games"
+msgstr "Näytä menneet ottelut"
+
+msgid "Search"
+msgstr "Hae"
+
+msgid "Date"
+msgstr "Päivämäärä"
+
+msgid "Your Bet"
+msgstr "Sinun veikkaus"
+
+msgid "Result"
+msgstr "Tulos"
+
+msgid "Points"
+msgstr "Pisteet"
+
+msgid "No logo available"
+msgstr "Logoa ei saatavilla"
+
+msgid "Not available"
+msgstr "Ei saatavilla"
+
+msgid "No prediction"
+msgstr "Ei veikkausta"
+
+msgid "No games found."
+msgstr "Ei otteluita löytynyt."
+
+msgid "First"
+msgstr "Ensimmäinen"
+
+msgid "Previous"
+msgstr "Edellinen"
+
+msgid "Page"
+msgstr "Sivu"
+
+msgid "Next"
+msgstr "Seuraava"
+
+msgid "Last"
+msgstr "Viimeinen"
+
+msgid "Login"
+msgstr "Kirjaudu sisään"
+
+msgid "Username:"
+msgstr "Käyttäjänimi:"
+
+msgid "Password:"
+msgstr "Salasana:"
+
+msgid "Don't have an account?"
+msgstr "Eikö sinulla ole vielä tiliä?"
+
+msgid "Create an account"
+msgstr "Luo tili"
+
+msgid "Password Change"
+msgstr "Salasanan vaihto"
+
+msgid "Please enter your current password and the new password twice to confirm."
+msgstr "Syötä nykyinen salasanasi ja uusi salasana kahdesti vahvistaaksesi."
+
+msgid "Change Password"
+msgstr "Vaihda salasana"
+
+msgid "Create an Account"
+msgstr "Luo tili"
+
+msgid "Sign Up"
+msgstr "Rekisteröidy"
+
+msgid "Already have an account?"
+msgstr "Onko sinulla jo tili?"
+
+msgid "Login here"
+msgstr "Kirjaudu tästä"
+
+msgid "Explanation of Abbreviations:"
+msgstr "Lyhenteiden selitykset:"
+
+msgid "Bets - Number of predictions made by the player."
+msgstr "Veikkaukset - Pelaajan tekemien ennusteiden määrä."
+
+msgid "Home Goals - Correctly predicted home team goals."
+msgstr "Kotijoukkueen maalit - Oikein veikatut maalit."
+
+msgid "Visitor Goals - Correctly predicted visitor team goals."
+msgstr "Vierasjoukkueen maalit - Oikein veikatut maalit."
+
+msgid "Winner - Correctly predicted the winner (or tie)."
+msgstr "Voittaja - Oikein veikatut voittajat (tai tasapelit)."
+
+msgid "Draw - Correctly predicted that the game ended in a tie."
+msgstr "Tasapeli - Oikein veikatut tasapelit."
+
+msgid "Select Season:"
+msgstr "Valitse kausi:"
+
+msgid "All Seasons"
+msgstr "Kaikki kaudet"
+
+msgid "Submit"
+msgstr "Tallenna"
+
+msgid "Update"
+msgstr "Päivitä"
+
+msgid "Filter"
+msgstr "Suodata"
+
+msgid "Player"
+msgstr "Pelaaja"
+
+msgid "Total"
+msgstr "Yhteensä"
+
+msgid "No scoreboard entries found."
+msgstr "Tulostaulumerkintöjä ei löytynyt."
+
+msgid "Page %(scoreboard.number)s of %(scoreboard.paginator.num_pages)s"
+msgstr "Sivu %(scoreboard.number)s / %(scoreboard.paginator.num_pages)s"
+
+msgid "ScoreGuru"
+msgstr "ScoreGuru"
+
+msgid "Home"
+msgstr "Etusivu"
+
+msgid "Change password"
+msgstr "Vaihda salasana"
+
+msgid "Logout"
+msgstr "Kirjaudu ulos"
+
+msgid "ScoreGuru. All rights reserved."
+msgstr "ScoreGuru. Kaikki oikeudet pidätetään."

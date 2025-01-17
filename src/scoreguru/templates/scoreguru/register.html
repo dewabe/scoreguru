@@ -1,13 +1,14 @@
-{% extends "base.html" %} 
+{% extends "base.html" %}
+{% load i18n %}
 
 {% block content %}
-<h2>Create an Account</h2>
+<h2>{% trans "Create an Account" %}</h2>
 <form method="POST">
     {% csrf_token %}
     {{ form.as_p }}
-    <button type="submit">Sign Up</button>
+    <button type="submit">{% trans "Sign Up" %}</button>
 </form>
-<p>Already have an account? <a href="{% url 'login' %}">Login here</a></p>
+<p>{% trans "Already have an account?" %} <a href="{% url 'login' %}">{% trans "Login here" %}</a></p>
 {% for message in messages %}
     <p style="color: green;">{{ message }}</p>
 {% endfor %}
