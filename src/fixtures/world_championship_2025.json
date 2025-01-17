@@ -1,0 +1,279 @@
+[
+    {
+      "model": "scoreguru.league",
+      "pk": 1,
+      "fields": {
+        "name": "World Championship",
+        "sport": "Hockey",
+        "description": "The annual ice hockey World Championship tournament."
+      }
+    },
+    {
+      "model": "scoreguru.season",
+      "pk": 1,
+      "fields": {
+        "league": 1,
+        "name": "2025 World Championship",
+        "start_date": "2025-05-01",
+        "end_date": "2025-05-25",
+        "visible": true
+      }
+    },
+    {
+      "model": "scoreguru.team",
+      "pk": 1,
+      "fields": {
+        "name": "Austria",
+        "abbreviation": "AUT",
+        "country_iso": "AT"
+      }
+    },
+    {
+      "model": "scoreguru.team",
+      "pk": 2,
+      "fields": {
+        "name": "Finland",
+        "abbreviation": "FIN",
+        "country_iso": "FI"
+      }
+    },
+    {
+      "model": "scoreguru.team",
+      "pk": 3,
+      "fields": {
+        "name": "Switzerland",
+        "abbreviation": "SUI",
+        "country_iso": "CH"
+      }
+    },
+    {
+      "model": "scoreguru.team",
+      "pk": 4,
+      "fields": {
+        "name": "Czech Republic",
+        "abbreviation": "CZE",
+        "country_iso": "CZ"
+      }
+    },
+    {
+      "model": "scoreguru.team",
+      "pk": 5,
+      "fields": {
+        "name": "Sweden",
+        "abbreviation": "SWE",
+        "country_iso": "SE"
+      }
+    },
+    {
+      "model": "scoreguru.team",
+      "pk": 6,
+      "fields": {
+        "name": "Slovakia",
+        "abbreviation": "SVK",
+        "country_iso": "SK"
+      }
+    },
+    {
+      "model": "scoreguru.team",
+      "pk": 7,
+      "fields": {
+        "name": "Denmark",
+        "abbreviation": "DEN",
+        "country_iso": "DK"
+      }
+    },
+    {
+      "model": "scoreguru.team",
+      "pk": 8,
+      "fields": {
+        "name": "United States",
+        "abbreviation": "USA",
+        "country_iso": "US"
+      }
+    },
+    {
+      "model": "scoreguru.team",
+      "pk": 9,
+      "fields": {
+        "name": "Slovenia",
+        "abbreviation": "SLO",
+        "country_iso": "SI"
+      }
+    },
+    {
+      "model": "scoreguru.team",
+      "pk": 10,
+      "fields": {
+        "name": "Canada",
+        "abbreviation": "CAN",
+        "country_iso": "CA"
+      }
+    },
+    {
+      "model": "scoreguru.team",
+      "pk": 11,
+      "fields": {
+        "name": "Norway",
+        "abbreviation": "NOR",
+        "country_iso": "NO"
+      }
+    },
+    {
+      "model": "scoreguru.team",
+      "pk": 12,
+      "fields": {
+        "name": "Kazakhstan",
+        "abbreviation": "KAZ",
+        "country_iso": "KZ"
+      }
+    },
+    {
+      "model": "scoreguru.team",
+      "pk": 13,
+      "fields": {
+        "name": "Germany",
+        "abbreviation": "GER",
+        "country_iso": "DE"
+      }
+    },
+    {
+      "model": "scoreguru.team",
+      "pk": 14,
+      "fields": {
+        "name": "Hungary",
+        "abbreviation": "HUN",
+        "country_iso": "HU"
+      }
+    },
+    {
+      "model": "scoreguru.team",
+      "pk": 15,
+      "fields": {
+        "name": "France",
+        "abbreviation": "FRA",
+        "country_iso": "FR"
+      }
+    },
+    {
+      "model": "scoreguru.team",
+      "pk": 16,
+      "fields": {
+        "name": "Latvia",
+        "abbreviation": "LAT",
+        "country_iso": "LV"
+      }
+    },
+    {
+      "model": "scoreguru.teamsinseason",
+      "fields": {
+        "team": 1,
+        "season": 1
+      }
+    },
+    {
+      "model": "scoreguru.teamsinseason",
+      "fields": {
+        "team": 2,
+        "season": 1
+      }
+    },
+    {
+      "model": "scoreguru.teamsinseason",
+      "fields": {
+        "team": 3,
+        "season": 1
+      }
+    },
+    {
+      "model": "scoreguru.teamsinseason",
+      "fields": {
+        "team": 4,
+        "season": 1
+      }
+    },
+    {
+      "model": "scoreguru.teamsinseason",
+      "fields": {
+        "team": 5,
+        "season": 1
+      }
+    },
+    {
+      "model": "scoreguru.teamsinseason",
+      "fields": {
+        "team": 6,
+        "season": 1
+      }
+    },
+    {
+      "model": "scoreguru.teamsinseason",
+      "fields": {
+        "team": 7,
+        "season": 1
+      }
+    },
+    {
+      "model": "scoreguru.teamsinseason",
+      "fields": {
+        "team": 8,
+        "season": 1
+      }
+    },
+    {
+      "model": "scoreguru.teamsinseason",
+      "fields": {
+        "team": 9,
+        "season": 1
+      }
+    },
+    {
+      "model": "scoreguru.teamsinseason",
+      "fields": {
+        "team": 10,
+        "season": 1
+      }
+    },
+    {
+      "model": "scoreguru.teamsinseason",
+      "fields": {
+        "team": 11,
+        "season": 1
+      }
+    },
+    {
+      "model": "scoreguru.teamsinseason",
+      "fields": {
+        "team": 12,
+        "season": 1
+      }
+    },
+    {
+      "model": "scoreguru.teamsinseason",
+      "fields": {
+        "team": 13,
+        "season": 1
+      }
+    },
+    {
+      "model": "scoreguru.teamsinseason",
+      "fields": {
+        "team": 14,
+        "season": 1
+      }
+    },
+    {
+      "model": "scoreguru.teamsinseason",
+      "fields": {
+        "team": 15,
+        "season": 1
+      }
+    },
+    {
+      "model": "scoreguru.teamsinseason",
+      "fields": {
+        "team": 16,
+        "season": 1
+      }
+    }
+  ]
+  

@@ -1,0 +1,170 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="info-box">
+        <h4>How to earn points:</h4>
+        <ul>
+            <li>+1 point for correctly predicting the home team goals.</li>
+            <li>+1 point for correctly predicting the visitor team goals.</li>
+            <li>+1 point for predicting the correct match result (win or draw).</li>
+            <li>+1 point for predicting the exact score in case of a draw.</li>
+        </ul>
+        <p><strong>Note:</strong> The maximum score per prediction is <strong>4 points</strong>.</p>
+    </div>
+    <h2>Upcoming Games</h2>
+
+    <!-- Suodatuslomake -->
+    <form method="GET" action="{% url 'index' %}">
+        <label for="team">Filter by Team:</label>
+        <select name="team" id="team">
+            <option value="">All Teams</option>
+            {% for team in teams %}
+                <option value="{{ team.team.name }}" {% if request.GET.team == team.team.name %}selected{% endif %}>
+                    {{ team.team.name }}
+                </option>
+            {% endfor %}
+        </select>
+        <label for="hide_predicted">
+            <input type="checkbox" name="hide_predicted" id="hide_predicted" {% if request.GET.hide_predicted == 'on' %}checked{% endif %}>
+            Show only unpredicted games
+        </label>
+        <label for="show_past_games">
+            <input type="checkbox" name="show_past_games" id="show_past_games" {% if request.GET.show_past_games == 'on' %}checked{% endif %}>
+            Show past games
+        </label>
+        <button type="submit">Search</button>
+    </form>
+
+    <!-- Pelien taulukko -->
+    <table>
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Home Team</th>
+                <th>Your Bet</th>
+                <th>Visitor Team</th>
+                <th>Result</th>
+                <th>Points</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for game in games %}
+                <tr>
+                    <td>{{ game.start_datetime|date:"d.m.Y H:i" }}</td>
+                    <td>
+                        <label for="team_{{ game.home_team.id }}">
+                            {% if game.home_team.team.country_iso %}
+                                <!-- Jos Alpha-2 -koodi on olemassa, näytetään lippu FlagCDN:stä -->
+                                <img src="https://flagcdn.com/w40/{{ game.home_team.team.country_iso|lower }}.png" 
+                                    style="width: 40px; height: auto; object-fit: contain; margin-right: 10pt;" alt="{{ game.home_team.team.name }} flag">
+                            {% elif game.home_team.team.logo %}
+                                <!-- Jos logo on olemassa, näytetään se -->
+                                <img src="{{ MEDIA_URL }}{{ game.home_team.team.logo }}" 
+                                     style="width: 40px; height: auto; object-fit: contain; margin-right: 10pt;" alt="{{ game.home_team.team.name }} logo">
+                            {% else %}
+                                <!-- Oletuskuva, jos ei ole lippua eikä logoa -->
+                                <img src="https://via.placeholder.com/50?text=No+Logo" 
+                                     style="width: 40px; height: auto; object-fit: contain; margin-right: 10pt;" alt="No logo available">
+                            {% endif %}
+                            {{ game.home_team.team.name }}
+                        </label>
+                    </td>
+                    
+                    <td>
+                        <div class="bet-container">
+                            {% if game.start_datetime > now and game.home_goals is None and game.visitor_goals is None %}
+                                <!-- Lomake veikkauksen syöttämiseen -->
+                                <form method="POST" action="{% url 'index' %}" class="bet-form">
+                                    {% csrf_token %}
+                                    <input type="hidden" name="game_id" value="{{ game.id }}">
+                                    <div class="bet-input-group">
+                                        <input type="number" name="predicted_home_goals" placeholder="H" value="{{ game.predicted_home_goals }}" required>
+                                        <span>-</span>
+                                        <input type="number" name="predicted_visitor_goals" placeholder="A" value="{{ game.predicted_visitor_goals }}" required>
+                                    </div>
+                                    <button type="submit">
+                                        {% if game.predicted_home_goals is not None and game.predicted_visitor_goals is not None %}
+                                            Update
+                                        {% else %}
+                                            Submit
+                                        {% endif %}
+                                    </button>
+                                </form>
+                            {% else %}
+                                <!-- Näytetään vain tulos samalla rakenteella -->
+                                <div class="bet-display">
+                                    {% if game.predicted_home_goals is not None and game.predicted_visitor_goals is not None %}
+                                        <span class="score">{{ game.predicted_home_goals }}</span>
+                                        <span>-</span>
+                                        <span class="score">{{ game.predicted_visitor_goals }}</span>
+                                    {% else %}
+                                        <em>No prediction</em>
+                                    {% endif %}
+                                </div>
+                            {% endif %}
+                        </div>
+                    </td>
+                    
+                    <td>
+                        <label for="team_{{ game.visitor_team.id }}">
+                            {% if game.visitor_team.team.country_iso %}
+                                <!-- Jos Alpha-2 -koodi on olemassa, näytetään lippu FlagCDN:stä -->
+                                <img src="https://flagcdn.com/w40/{{ game.visitor_team.team.country_iso|lower }}.png" 
+                                     style="width: 40px; height: auto; object-fit: contain; margin-right: 10pt;" alt="{{ game.visitor_team.team.name }} flag">
+                            {% elif game.visitor_team.team.logo %}
+                                <!-- Jos logo on olemassa, näytetään se -->
+                                <img src="{{ MEDIA_URL }}{{ game.visitor_team.team.logo }}" 
+                                     style="width: 40px; height: auto; object-fit: contain; margin-right: 10pt;" alt="{{ game.visitor_team.team.name }} logo">
+                            {% else %}
+                                <!-- Oletuskuva, jos ei ole lippua eikä logoa -->
+                                <img src="https://via.placeholder.com/50?text=No+Logo" 
+                                     style="width: 40px; height: auto; object-fit: contain; margin-right: 10pt;" alt="No logo available">
+                            {% endif %}
+                            {{ game.visitor_team.team.name }}
+                        </label>
+                    </td>
+                    
+                    <td>
+                        {% if game.home_goals is not None and game.visitor_goals is not None %}
+                            <strong>{{ game.home_goals }} - {{ game.visitor_goals }}</strong>
+                        {% else %}
+                            <em>Not available</em>
+                        {% endif %}
+                    </td>
+                    <td>
+                        {% if game.total_points is not None %}
+                            {{ game.total_points }}
+                        {% else %}
+                            0
+                        {% endif %}
+                    </td>
+                </tr>
+            {% empty %}
+                <tr>
+                    <td colspan="6">No games found.</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    
+    {% if games.paginator.num_pages > 1 %}
+    <div class="pagination">
+        <span class="step-links">
+            {% if games.has_previous %}
+                <a href="?{% if request.GET.team %}team={{ request.GET.team }}&{% endif %}page=1">First</a> |
+                <a href="?{% if request.GET.team %}team={{ request.GET.team }}&{% endif %}page={{ games.previous_page_number }}">Previous</a> |
+            {% endif %}
+
+            <span class="current">
+                Page {{ games.number }} of {{ games.paginator.num_pages }}
+            </span>
+
+            {% if games.has_next %}
+                | <a href="?{% if request.GET.team %}team={{ request.GET.team }}&{% endif %}page={{ games.next_page_number }}">Next</a> |
+                <a href="?{% if request.GET.team %}team={{ request.GET.team }}&{% endif %}page={{ games.paginator.num_pages }}">Last</a>
+            {% endif %}
+        </span>
+    </div>
+    {% endif %}
+
+{% endblock %}

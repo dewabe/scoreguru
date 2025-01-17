@@ -1,0 +1,86 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h2>Scoreboard</h2>
+
+    <!-- Info-alue lyhenteiden selityksille ja pisteenlaskulle -->
+    <div class="info-box">
+        <h4>Explanation of Abbreviations:</h4>
+        <ul>
+            <li><strong>B</strong>: Bets - Number of predictions made by the player.</li>
+            <li><strong>H</strong>: Home Goals - Correctly predicted home team goals.</li>
+            <li><strong>V</strong>: Visitor Goals - Correctly predicted visitor team goals.</li>
+            <li><strong>W</strong>: Winner - Correctly predicted the winner (or tie).</li>
+            <li><strong>D</strong>: Draw - Correctly predicted that the game ended in a tie.</li>
+        </ul>
+    </div>
+
+    <!-- Suodatuslomake kauden valintaan -->
+    <form method="GET" action="{% url 'scoreboard' %}" style="display: none;">
+        <label for="season">Select Season:</label>
+        <select name="season" id="season">
+            <option value="">All Seasons</option>
+            {% for season in seasons %}
+                <option value="{{ season.name }}" {% if selected_season == season.name %}selected{% endif %}>
+                    {{ season.name }}
+                </option>
+            {% endfor %}
+        </select>
+        <button type="submit">Filter</button>
+    </form>
+
+    <!-- Scoreboard-taulukko -->
+    <table>
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Player</th>
+                <th>B</th>
+                <th>H</th>
+                <th>V</th>
+                <th>W</th>
+                <th>D</th>
+                <th>Total</th>
+            </tr>            
+        </thead>
+        <tbody>
+            {% for entry in scoreboard %}
+            <tr{% if user.id == entry.user.id %} class="highlight-row"{% endif %}>
+                    <td>{{ forloop.counter }}</td>
+                    <td>{{ entry.user.username }}</td>
+                    <td>{{ entry.bets }}</td>
+                    <td>{{ entry.correct_home_goals }}</td>
+                    <td>{{ entry.correct_visitor_goals }}</td>
+                    <td>{{ entry.correct_winner }}</td>
+                    <td>{{ entry.correct_tie }}</td>
+                    <td>{{ entry.total_points }}</td>
+                </tr>
+            {% empty %}
+                <tr>
+                    <td colspan="7">No scoreboard entries found.</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <!-- Paginointi -->
+    {% if scoreboard.paginator.num_pages > 1 %}
+    <div class="pagination">
+        <span class="step-links">
+            {% if scoreboard.has_previous %}
+                <a href="?{% if selected_season %}season={{ selected_season }}&{% endif %}page=1">First</a>
+                <a href="?{% if selected_season %}season={{ selected_season }}&{% endif %}page={{ scoreboard.previous_page_number }}">Previous</a>
+            {% endif %}
+
+            <span class="current">
+                Page {{ scoreboard.number }} of {{ scoreboard.paginator.num_pages }}
+            </span>
+
+            {% if scoreboard.has_next %}
+                <a href="?{% if selected_season %}season={{ selected_season }}&{% endif %}page={{ scoreboard.next_page_number }}">Next</a>
+                <a href="?{% if selected_season %}season={{ selected_season }}&{% endif %}page={{ scoreboard.paginator.num_pages }}">Last</a>
+            {% endif %}
+        </span>
+    </div>
+    {% endif %}
+{% endblock %}
